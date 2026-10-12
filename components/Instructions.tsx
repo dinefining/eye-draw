@@ -67,7 +67,7 @@ const Instructions: React.FC<InstructionsProps> = ({ isCalibrated, isTouch, onCa
     )}
 
     <p className="mt-3">
-      A <GreenMark href="https://ravipopat.info/maybe-machines">Maybe Machine</GreenMark> by{' '}
+      A <GreenMark href="https://maybemachines.com">Maybe Machine</GreenMark> by{' '}
       <GreenMark href="https://ravipopat.info">Ravi Popat</GreenMark>.
     </p>
   </div>
