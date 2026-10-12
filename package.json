@@ -1,0 +1,30 @@
+{
+  "name": "eye-draw",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "postinstall": "node scripts/copy-mediapipe.mjs",
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@mediapipe/tasks-vision": "^1.1.0",
+    "lucide-react": "^0.546.0",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.14.0",
+    "@vitejs/plugin-react": "^5.0.0",
+    "typescript": "~5.8.2",
+    "vite": "^6.2.0"
+  },
+  "description": "Draw trails of text with your eyes. A Maybe Machine by Ravi Popat.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dinefining/eye-draw.git"
+  },
+  "homepage": "https://dinefining.github.io/eye-draw/"
+}
