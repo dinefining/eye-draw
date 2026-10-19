@@ -787,12 +787,18 @@ const App: React.FC = () => {
               isCalibrated={isCalibrated}
               isTouch={isTouch}
               onCalibrate={handleCalibrate}
-              style={{
-                bottom: EDGE,
-                left: besideBox,
-                width: Math.min(384, panelMaxWidth),
-                maxHeight: viewport.height - 2 * EDGE - BOX - 8,
-              }}
+              // Phones get a full-screen overlay; there's no room for a panel beside the button.
+              fullScreen={isNarrow}
+              style={
+                isNarrow
+                  ? { padding: `${EDGE}px ${EDGE}px ${EDGE + BOX + 16}px` }
+                  : {
+                      bottom: EDGE,
+                      left: besideBox,
+                      width: Math.min(384, panelMaxWidth),
+                      maxHeight: viewport.height - 2 * EDGE - BOX - 8,
+                    }
+              }
             />
           )}
 
