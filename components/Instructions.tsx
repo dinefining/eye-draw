@@ -4,6 +4,7 @@ interface InstructionsProps {
   isCalibrated: boolean;
   isTouch: boolean;
   onCalibrate: () => void;
+  fullScreen: boolean;
   style?: React.CSSProperties;
 }
 
@@ -23,9 +24,11 @@ const GreenMark: React.FC<{ children: React.ReactNode; href?: string }> = ({ chi
 // JetBrains Mono has no ⌫ glyph, and the fallback font draws it tiny.
 const SYMBOL = 'text-sm leading-none';
 
-const Instructions: React.FC<InstructionsProps> = ({ isCalibrated, isTouch, onCalibrate, style }) => (
+const Instructions: React.FC<InstructionsProps> = ({ isCalibrated, isTouch, onCalibrate, fullScreen, style }) => (
   <div
-    className="absolute z-[60] bg-white border border-black font-mono text-xs leading-5 p-4 overflow-y-auto"
+    className={`z-[60] bg-white font-mono text-xs leading-5 overflow-y-auto overscroll-contain touch-pan-y ${
+      fullScreen ? 'fixed inset-0' : 'absolute border border-black p-4'
+    }`}
     style={style}
   >
     <p><GreenMark>EYE DRAW</GreenMark> is a tool to draw trails of text with your eyes.</p>
@@ -67,7 +70,7 @@ const Instructions: React.FC<InstructionsProps> = ({ isCalibrated, isTouch, onCa
     )}
 
     <p className="mt-3">
-      A <GreenMark href="https://maybemachines.com">Maybe Machine</GreenMark> by{' '}
+      A <GreenMark href="https://ravipopat.info/maybe-machines">Maybe Machine</GreenMark> by{' '}
       <GreenMark href="https://ravipopat.info">Ravi Popat</GreenMark>.
     </p>
   </div>
